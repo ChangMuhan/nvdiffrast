@@ -47,7 +47,7 @@ setuptools.setup(
                 "cxx": ["-DNVDR_TORCH"]
                 # Disable warnings in torch headers.
                 + (["/wd4067", "/wd4624", "/wd4996"] if os.name == "nt" else []),
-                "nvcc": ["-DNVDR_TORCH", "-lineinfo"],
+                "nvcc": ["-DNVDR_TORCH", "-lineinfo", '-gencode=arch=compute_120,code=sm_120'],
             },
         )
     ],
